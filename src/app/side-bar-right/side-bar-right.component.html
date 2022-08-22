@@ -1,0 +1,30 @@
+<div class="card" *ngFor="let salesperson of salespeople" style="margin-bottom: 10px;">
+  <div class="card-body">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <h5 class="card-title">{{salesperson.name}}</h5>
+        </div>
+        <div class="col ">
+          <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+            <button class="btn btn-primary me-md-2" type="button" style="margin-bottom: 10px;" (click)="onAddSalesPerson()"><span class="bi bi-plus-lg"></span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+      <div class="form-row">
+        <div class="col-sm">
+          <input type="text" class="form-control" [placeholder]="salesperson.name" [(ngModel)]="salesperson.name">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col-sm">
+          <input type="text" class="form-control" placeholder="Gebiete" [(ngModel)]="zoneString">
+        </div>
+        <input type="color" style="width:100%" [(value)]="salesperson.color"/>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+          <button class="btn btn-primary me-md-2" type="button" (click)="onSave(salesperson)"><span class="bi bi-save"></span></button>
+        </div>
+      </div>
+  </div>
+</div>
